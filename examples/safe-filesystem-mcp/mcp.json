@@ -1,0 +1,16 @@
+{
+  "mcpServers": {
+    "project-docs-readonly": {
+      "command": "node",
+      "args": ["./server.js"],
+      "env": {
+        "MCP_ROOT": "./docs"
+      },
+      "policy": {
+        "filesystem": "read-only",
+        "allowedPaths": ["./docs", "./README.md"],
+        "requiresApproval": []
+      }
+    }
+  }
+}
