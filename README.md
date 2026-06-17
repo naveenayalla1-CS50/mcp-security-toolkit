@@ -1,24 +1,24 @@
 # MCP Security Toolkit
 
-Security scanner and developer toolkit for MCP servers used by AI agents.
+Security scanner and developer toolkit for MCP servers used by Claude, Cursor, Codex, VS Code, and custom AI agents.
 
-MCP servers are quickly becoming the tool layer for AI agents. They can expose filesystem access, shell commands, API credentials, database queries, and internal workflows to tools like Claude, Cursor, Codex, VS Code, and custom agents.
+[![CI](https://github.com/naveenayalla1-CS50/mcp-security-toolkit/actions/workflows/ci.yml/badge.svg)](https://github.com/naveenayalla1-CS50/mcp-security-toolkit/actions/workflows/ci.yml)
+[![Release](https://img.shields.io/github/v/release/naveenayalla1-CS50/mcp-security-toolkit)](https://github.com/naveenayalla1-CS50/mcp-security-toolkit/releases)
+[![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
 
-This repo helps developers inspect, test, and harden MCP servers before connecting them to autonomous or semi-autonomous agents.
+MCP servers are becoming the tool layer for AI agents. They can expose filesystem access, shell commands, API credentials, database queries, and internal workflows. That power is useful, but it also creates a new security surface.
 
-## Why This Exists
+`mcp-sec` helps developers inspect, test, and harden MCP servers before connecting them to autonomous or semi-autonomous agents.
 
-AI agents are no longer just generating text. They can call tools, edit files, run commands, read secrets, create tickets, query databases, and trigger workflows. MCP makes that powerful, but it also creates a new security surface.
+![MCP Security Toolkit terminal demo](assets/demo.svg)
 
-`mcp-sec` gives teams a simple first pass for reviewing MCP server configurations and code before they are connected to an agent.
-
-## Quick Start
+## Try It
 
 ```bash
 npx mcp-security-toolkit scan ./my-mcp-server
 ```
 
-Or clone this repo and run it locally:
+Or run the unsafe example:
 
 ```bash
 git clone https://github.com/naveenayalla1-CS50/mcp-security-toolkit.git
@@ -26,6 +26,20 @@ cd mcp-security-toolkit
 npm install
 npm run scan:example:unsafe
 ```
+
+## Why Star This Repo?
+
+- You are building or using MCP servers.
+- You connect tools to Claude, Cursor, Codex, VS Code, or custom agents.
+- You want a fast check for risky tool access before agent workflows run.
+- You care about prompt injection, shell execution, secrets, and filesystem exposure.
+- You want a simple open-source project to contribute MCP security rules to.
+
+## Why This Exists
+
+AI agents are no longer just generating text. They can call tools, edit files, run commands, read secrets, create tickets, query databases, and trigger workflows. MCP makes that powerful, but it also creates a new security surface.
+
+`mcp-sec` gives teams a simple first pass for reviewing MCP server configurations and code before they are connected to an agent.
 
 ## Example Output
 
@@ -113,13 +127,13 @@ See [docs/mcp-security-checklist.md](docs/mcp-security-checklist.md) for the ful
 
 ## Contributing
 
-Contributions are welcome. Good first issues:
+Contributions are welcome. Start with a good first issue:
 
-- Add support for a new MCP client config format.
-- Add a new security rule.
-- Improve risk scoring.
-- Add real-world safe/unsafe examples.
-- Add SARIF or HTML reporting.
+- [Add Claude Desktop config auto-discovery](https://github.com/naveenayalla1-CS50/mcp-security-toolkit/issues/1)
+- [Add Cursor MCP config auto-discovery](https://github.com/naveenayalla1-CS50/mcp-security-toolkit/issues/2)
+- [Add SARIF output for GitHub code scanning](https://github.com/naveenayalla1-CS50/mcp-security-toolkit/issues/3)
+- [Add an HTML security report](https://github.com/naveenayalla1-CS50/mcp-security-toolkit/issues/4)
+- [Add more real-world safe/unsafe MCP examples](https://github.com/naveenayalla1-CS50/mcp-security-toolkit/issues/5)
 
 See [CONTRIBUTING.md](CONTRIBUTING.md).
 
