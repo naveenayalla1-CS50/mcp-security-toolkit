@@ -10,7 +10,8 @@
     "test": "node --test",
     "scan:example:safe": "node ./bin/mcp-sec.js scan ./examples/safe-filesystem-mcp",
     "scan:example:unsafe": "node ./bin/mcp-sec.js scan ./examples/unsafe-filesystem-mcp",
-    "check": "npm test && npm run scan:example:safe && npm run scan:example:unsafe"
+    "scan:example:unsafe:expect-fail": "node -e \"const { spawnSync } = require('node:child_process'); const result = spawnSync(process.execPath, ['./bin/mcp-sec.js', 'scan', './examples/unsafe-filesystem-mcp'], { stdio: 'inherit' }); process.exit(result.status === 2 ? 0 : 1);\"",
+    "check": "npm test && npm run scan:example:safe && npm run scan:example:unsafe:expect-fail"
   },
   "keywords": [
     "mcp",
